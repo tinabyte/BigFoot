@@ -30,10 +30,17 @@ class Graph {
         return this.nodes;
     }
 
+    // KNN algorithm
+    knn() {
+
+    }
+
+    // Dijkstra's algorithm
     dijkstra(start) {
 
     }
 
+    // A* algorithm
     a_star(start) {
 
     }

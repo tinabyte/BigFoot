@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, Polyline, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 
-const bigFootSightings = {} // To store the bigfoot sightings.
+// import {bigfoot_sightings} from "./data_processing";
 
 const polylinePath = [[29.648041, -82.343772], [29.659112, -82.411823]];
 
@@ -39,12 +39,17 @@ const MyMap = () => {
                 url="https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}{r}.png"
                 attribution='Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.'
             />
-            <Polyline pathOptions={{color: 'purple'}} positions={polylinePath} /> {/* Adds the Polyline to the map */}
-            {/*<Marker position={mapCenter}>*/}
-            {/*    <Popup>*/}
-            {/*        A sample popup.*/}
-            {/*    </Popup>*/}
-            {/*</Marker>*/}
+            {/*<Polyline pathOptions={{color: 'purple'}} positions={polylinePath} /> /!* Adds the Polyline to the map *!/*/}
+            {/*{*/}
+            {/*    bigfoot_sightings.map((sighting, index) => (*/}
+            {/*        <Marker key={index} position={[sighting.latitude, sighting.longitude]}>*/}
+            {/*            <Popup>*/}
+            {/*                <h2>{sighting.title}</h2>*/}
+            {/*                <p>{sighting.observed}</p>*/}
+            {/*            </Popup>*/}
+            {/*        </Marker>*/}
+            {/*    ))*/}
+            {/*}*/}
         </MapContainer>
     );
 };
