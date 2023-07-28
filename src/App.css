@@ -3,16 +3,18 @@
 .map-container {
   height: 100%;
   width: 100%;
+  border-radius: 20px;
 }
 
 .App {
-  background-color: #282c34;
+  background-color: white;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: black;
+  padding-top: 5px;
 }
 
 .App-logo {
@@ -44,4 +46,12 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.mapStyle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
 }
