@@ -33,7 +33,7 @@ const MyMap = () => {
     }, []);
 
     return (
-        <MapContainer center={mapCenter} zoom={zoom} style={{ height: "60vh", width: "60%" }}>
+        <MapContainer center={mapCenter} zoom={zoom} style={{ height: "80vh", width: "100%" }}>
             <ChangeView center={mapCenter} zoom={zoom} />
             <TileLayer
                 url="https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}{r}.png"
