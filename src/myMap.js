@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, Polyline, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
+import {loadCSVData} from "./data_processing";
 
-// import {bigfoot_sightings} from "./data_processing";
+//import {loadCSVData} from './data';
 
 const polylinePath = [[29.648041, -82.343772], [29.659112, -82.411823]];
 
@@ -16,6 +17,7 @@ const ChangeView = ({ center, zoom }) => {
 const MyMap = () => {
     const [mapCenter, setMapCenter] = useState([51.505, -0.09]); // Initial position
     const zoom = 13;
+    const [bigfoot_sightings, setBigfootSightings] = useState([]);
 
     useEffect(() => {
         if (navigator.geolocation) {
@@ -30,6 +32,22 @@ const MyMap = () => {
         } else {
             console.log("Geolocation is not supported by this browser.");
         }
+        loadCSVData()
+            .then((data) => {
+                const validData = data.filter(
+                    (sighting) =>
+                        typeof sighting.latitude === 'number' &&
+                        typeof sighting.longitude === 'number' &&
+                        !isNaN(sighting.latitude) &&
+                        !isNaN(sighting.longitude)
+                );
+                setBigfootSightings(validData);
+            })
+            .catch((error) => {
+                console.error('Error loading CSV data:', error);
+            });
+
+
     }, []);
 
     return (
@@ -50,6 +68,15 @@ const MyMap = () => {
             {/*        </Marker>*/}
             {/*    ))*/}
             {/*}*/}
+            /* Add Markers for each Bigfoot sighting */
+            {bigfoot_sightings.map((sighting, index) => (
+                <Marker key={index} position={[sighting.latitude, sighting.longitude]}>
+                    <Popup>
+                        <h2>{sighting.title}</h2>
+                        <p>{sighting.observed}</p>
+                    </Popup>
+                </Marker>
+            ))}
         </MapContainer>
     );
 };
