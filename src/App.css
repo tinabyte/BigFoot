@@ -6,7 +6,7 @@ body {
 }
 
 .App {
-  background-color: #20041c;
+  background-color: black;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -26,6 +26,8 @@ body {
 	position: relative;
 	z-index: 10;
 }
+
+
 
 .animation_layer {
 	background-position: bottom center;

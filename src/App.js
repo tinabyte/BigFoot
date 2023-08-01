@@ -10,11 +10,11 @@ function App() {
   return (
     <div className="App">
       <Parallax pages={2} style={{ top: "0", left: "0" }} class="animation">
-        <ParallaxLayer offset={0} speed={2.5}>
+        <ParallaxLayer offset={0} speed={4.5}>
           <div class="animation_layer parallax" id="stars"></div>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={0} speed={2.5}>
+        <ParallaxLayer offset={0} speed={2}>
           <div class="animation_layer parallax" id="moon"></div>
         </ParallaxLayer>
 
@@ -22,7 +22,7 @@ function App() {
           <div class="animation_layer parallax" id="mountain1"></div>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={0} speed={2.5}>
+        <ParallaxLayer offset={0} speed={4.9}>
           <div class="animation_layer parallax" id="mountain2"></div>
         </ParallaxLayer>
       </Parallax>
