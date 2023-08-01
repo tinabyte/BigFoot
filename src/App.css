@@ -3,11 +3,10 @@
 
 body {
   margin: 0;
-  padding-top: 40px;
 }
 
 .App {
-  background-color: white;
+  background-color: #20041c;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -15,6 +14,57 @@ body {
   justify-content: center;
   color: black;
 }
+
+
+
+.animation, .animation_layer {
+	height: 1000px;
+}
+
+.animation {
+  display: block;
+	position: relative;
+	z-index: 10;
+}
+
+.animation_layer {
+	background-position: bottom center;
+	background-size: auto 1038px;
+	background-repeat: repeat-x;
+	width: 100%;
+	position: absolute;
+}
+.animation_layer.parallax {
+	position: fixed;
+}
+
+#stars {
+  background-image: url(./elements/stars.png);
+  size-adjust: 50%;
+}
+
+#moon {
+  background-image: url(./elements/moon.png);
+  size-adjust: 50%;
+}
+
+#mountain1 {
+  background-image: url(./elements/mountains_behind.png);
+}
+
+#mountain2 {
+  background-image: url(./elements/mountains_front.png);
+}
+
+
+
+
+
+
+
+
+
+
 
 .App-header {
   background-color: #282c34;
@@ -58,7 +108,8 @@ nav {
 /* Apply styles to the sections */
 .sectionStyle {
   padding: 40px;
-  
+  margin-right: 90px;
+  margin-left: 90px;
   background-color: #f9f9f9;
 }
 
