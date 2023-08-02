@@ -1,4 +1,6 @@
-import React from "react";
+// import React from "react";
+import React, { useEffect } from "react";
+
 import MyMap from "./myMap"; // Path to MyMap.js
 import "./App.css";
 import { Link } from "react-scroll";
@@ -7,6 +9,27 @@ import Find from "./elements/find.json";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
 function App() {
+  useEffect(() => {
+    const handleScroll = () => {
+      // Get the scroll position
+      const scrollPosition = window.scrollY;
+
+      // Update the horizontal position of the stars element based on the scroll position
+      const starsElement = document.getElementById("stars");
+      if (starsElement) {
+        starsElement.style.transform = `translateX(${scrollPosition}px)`;
+      }
+    };
+
+    // Add event listener for scroll
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div className="App">
       <Parallax pages={2} style={{ top: "0", left: "0" }} class="animation">
@@ -14,17 +37,17 @@ function App() {
           <div class="animation_layer parallax" id="stars"></div>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={0} speed={2}>
+        <ParallaxLayer offset={0} speed={5.5}>
           <div class="animation_layer parallax" id="moon"></div>
         </ParallaxLayer>
-
+        {/* 
         <ParallaxLayer offset={0} speed={2.5}>
           <div class="animation_layer parallax" id="mountain1"></div>
-        </ParallaxLayer>
+        </ParallaxLayer> */}
 
-        <ParallaxLayer offset={0} speed={4.9}>
+        {/* <ParallaxLayer offset={0} speed={4.9}>
           <div class="animation_layer parallax" id="mountain2"></div>
-        </ParallaxLayer>
+        </ParallaxLayer> */}
       </Parallax>
 
       {/* 

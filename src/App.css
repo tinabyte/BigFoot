@@ -6,13 +6,25 @@ body {
 }
 
 .App {
-  background-color: black;
+  background: linear-gradient(to bottom, #9bcbff, #f0fce4, white);
+  /* background-color: white; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   color: black;
+}
+
+.animation_layer.parallax {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: repeat-x;
+  /* You can set a background image for the stars if needed */
+  background-image: url(./elements/stars.PNG);
 }
 
 
@@ -41,12 +53,12 @@ body {
 }
 
 #stars {
-  background-image: url(./elements/stars.png);
+  background-image: url(./elements/stars.PNG);
   size-adjust: 50%;
 }
 
 #moon {
-  background-image: url(./elements/moon.png);
+  background-image: url(./elements/moon.PNG);
   size-adjust: 50%;
 }
 
@@ -55,7 +67,7 @@ body {
 }
 
 #mountain2 {
-  background-image: url(./elements/mountains_front.png);
+  background-image: url(./elements/mountain2.png);
 }
 
 
