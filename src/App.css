@@ -3,7 +3,7 @@
 
 body {
   margin: 0;
-  background-color: #38041c;
+  background-color: beige;
 
 }
 
@@ -94,7 +94,7 @@ nav {
 
 /* Apply styles to the map container */
 .map-container {
-  height: 300px; /* Set an appropriate height for your map */
+  height: 700px; /* Set an appropriate height for your map */
   width: 700%;
   border-radius: 20px;
 }
@@ -103,7 +103,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 150%;
   text-align: center;
   margin-left: 20px;
   margin-right: 20px;
