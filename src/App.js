@@ -15,7 +15,7 @@ function App() {
       const scrollPosition = window.scrollY;
 
       // Update the horizontal position of the stars element based on the scroll position
-      const starsElement = document.getElementById("stars");
+      const starsElement = document.getElementById("cloud");
       if (starsElement) {
         starsElement.style.transform = `translateX(${scrollPosition}px)`;
       }
@@ -32,22 +32,27 @@ function App() {
 
   return (
     <div className="App">
-      <Parallax pages={2} style={{ top: "0", left: "0" }} class="animation">
+      <Parallax pages={2} style={{ top: "0", left: "0" }}>
+        <ParallaxLayer offset={0} speed={4.5}>
+          <div class="animation_layer parallax" id="cloud"></div>
+        </ParallaxLayer>
+
         <ParallaxLayer offset={0} speed={4.5}>
           <div class="animation_layer parallax" id="stars"></div>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={0} speed={5.5}>
+        <ParallaxLayer offset={0} speed={6.5}>
           <div class="animation_layer parallax" id="moon"></div>
         </ParallaxLayer>
-        {/* 
-        <ParallaxLayer offset={0} speed={2.5}>
-          <div class="animation_layer parallax" id="mountain1"></div>
-        </ParallaxLayer> */}
 
-        {/* <ParallaxLayer offset={0} speed={4.9}>
-          <div class="animation_layer parallax" id="mountain2"></div>
-        </ParallaxLayer> */}
+        <ParallaxLayer offset={0} speed={0.5}>
+          <div class="offset2"></div>
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={1}>
+          <MyMap />
+        </ParallaxLayer>
+        {/* WORK ON THE MAP HERE, THE MAP IS HERE!! */}
       </Parallax>
 
       {/* 
