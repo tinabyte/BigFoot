@@ -21,8 +21,8 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 120%;
-  /* background-repeat: repeat-x; */
+  height: 100%;
+  background-repeat: repeat-x;
   background-image: url(./elements/stars.png);
 }
 
