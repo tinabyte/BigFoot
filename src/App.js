@@ -7,6 +7,7 @@ import { Link } from "react-scroll";
 import Lottie from "lottie-react";
 import Find from "./elements/find.json";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+import bigFoot from "./elements/bigFF.png";
 
 function App() {
   useEffect(() => {
@@ -32,8 +33,11 @@ function App() {
 
   return (
     <div className="App">
-      <Parallax pages={2} style={{ top: "0", left: "0" }}>
-        <ParallaxLayer offset={0} speed={4.5}>
+      <Parallax pages={2} style={{ top: "0", left: "0" }} className="animation">
+        <ParallaxLayer offset={0} speed={6}>
+          <div class="animation_layer parallax" id="background"></div>
+        </ParallaxLayer>
+        <ParallaxLayer offset={0} speed={3.5}>
           <div class="animation_layer parallax" id="cloud"></div>
         </ParallaxLayer>
 
@@ -41,7 +45,11 @@ function App() {
           <div class="animation_layer parallax" id="stars"></div>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={0} speed={6.5}>
+        <ParallaxLayer offset={0} speed={10.5}>
+          <img src={bigFoot} alt="Image Description" />
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={0} speed={6}>
           <div class="animation_layer parallax" id="moon"></div>
         </ParallaxLayer>
 
@@ -49,8 +57,12 @@ function App() {
           <div class="offset2"></div>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={1}>
+        <ParallaxLayer offset={0.999999999999} speed={6}>
           <MyMap />
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={1} speed={6}>
+          <h1>placeholder for other necessary data</h1>
         </ParallaxLayer>
         {/* WORK ON THE MAP HERE, THE MAP IS HERE!! */}
       </Parallax>
