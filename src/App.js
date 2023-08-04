@@ -1,5 +1,5 @@
 // import React from "react";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import MyMap from "./myMap"; // Path to MyMap.js
 import "./App.css";
@@ -8,29 +8,9 @@ import Lottie from "lottie-react";
 import Find from "./elements/find.json";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import bigFoot from "./elements/bigFF.png";
+import Papa from "papaparse";
 
 function App() {
-  useEffect(() => {
-    const handleScroll = () => {
-      // Get the scroll position
-      const scrollPosition = window.scrollY;
-
-      // Update the horizontal position of the stars element based on the scroll position
-      const starsElement = document.getElementById("cloud");
-      if (starsElement) {
-        starsElement.style.transform = `translateX(${scrollPosition}px)`;
-      }
-    };
-
-    // Add event listener for scroll
-    window.addEventListener("scroll", handleScroll);
-
-    // Clean up the event listener when the component unmounts
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
     <div className="App">
       <Parallax pages={2} style={{ top: "0", left: "0" }} className="animation">
@@ -45,25 +25,21 @@ function App() {
           <div class="animation_layer parallax" id="stars"></div>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={0} speed={10.5}>
-          <img src={bigFoot} alt="Image Description" />
-        </ParallaxLayer>
-
         <ParallaxLayer offset={0} speed={6}>
           <div class="animation_layer parallax" id="moon"></div>
+        </ParallaxLayer>
+        <ParallaxLayer offset={0} speed={-0.5}>
+          <img src={bigFoot} alt="Image Description" />
         </ParallaxLayer>
 
         <ParallaxLayer offset={0} speed={0.5}>
           <div class="offset2"></div>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={0.999999999999} speed={6}>
+        <ParallaxLayer offset={1} speed={6}>
           <MyMap />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={1} speed={6}>
-          <h1>placeholder for other necessary data</h1>
-        </ParallaxLayer>
         {/* WORK ON THE MAP HERE, THE MAP IS HERE!! */}
       </Parallax>
 
