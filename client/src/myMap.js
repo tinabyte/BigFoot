@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, Polyline, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import {loadCSVData} from "./data_processing";
+import {loadCSVData} from "../../server/data_processing.js";
+// import { loadCSVData } from 'data_processing';
 
 //import {loadCSVData} from './data';
 
